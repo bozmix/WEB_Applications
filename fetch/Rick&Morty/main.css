@@ -1,0 +1,66 @@
+body {
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/364/740/974/tv-show-rick-and-morty-morty-smith-planet-rick-sanchez-hd-wallpaper-preview.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    text-align: center;
+}
+
+.characters {
+    display: inline-block;
+    width: 20%;
+    background-color: white;
+    margin: 5px 1%;
+    text-align: center;
+}
+
+.characters img {
+    width: 100%;
+}
+
+.characters h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1em;
+}
+
+.characters button {
+    width: 80%;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    border: rgb(55,186,114) solid 1px;
+    color: rgb(55,186,114);
+}
+
+#character-1 button {
+    color: white;
+    background-color: rgb(55,186,114);
+}
+
+.character {
+    color: white;
+    font-weight: bolder;
+    font-size: xx-large;
+    background-color: rgba(0, 0, 0, 0.808);
+
+}
+
+.character img {
+    width: 40%;
+}
+
+.description {
+    display: inline-block;
+    width: 55%;
+    margin-left: 2%;
+}
+
+.description p {
+    margin: 10px 5px;
+    font-family: monospace;
+}
