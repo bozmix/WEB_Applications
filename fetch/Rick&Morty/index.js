@@ -55,9 +55,6 @@ const removeCharacter = () => {
     if (w) {
         w.remove();
     };
-   // let c = document.createElement('div');
-   // c.setAttribute('class', 'container');
-  //  body.appendChild(c);
     onLoad();
 }
 
