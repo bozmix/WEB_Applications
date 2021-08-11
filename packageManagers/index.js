@@ -9,7 +9,7 @@ figlet('Hello World!!', function(err, data) {
     console.log(data)
 });*/
 figlet.text('Hello world!!', {
-    font: 'Cursive',
+    font: 'Sub-Zero',
     horizontalLayout: 'default',
     verticalLayout: 'default',
     width: 80,
