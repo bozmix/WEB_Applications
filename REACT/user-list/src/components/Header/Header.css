@@ -1,6 +1,6 @@
 .header {
-    color: white;
     background-color: red;
-    padding: 10px;
+    color: white;
     text-align: center;
+    margin-top: 0;
 }

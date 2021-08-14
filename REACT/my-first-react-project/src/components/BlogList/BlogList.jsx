@@ -1,6 +1,6 @@
 import  React  from 'react';
 import { blogPosts } from '../../data/blog-posts.js';
-
+import { Blog } from '../Blog/Blog.jsx';
 import './BlogList.css';
 
 const BlogList = () => {
@@ -14,12 +14,7 @@ const BlogList = () => {
         </div>
         */
         <div className='blogItem'>
-            {blogPosts.map((post, index) => (
-                <div className='blogText' key={index}>
-                    <h2>{post.title}</h2>
-                    <p>{post.body}</p>
-                </div>
-            ))}
+            {blogPosts.map((post, index) => <Blog post={post} key={index}/>)}
                 
 
         </div>
