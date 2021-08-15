@@ -15,10 +15,10 @@ export class BlogList extends Component {
     }
 
     render (){
-        const {count, onClick} = this.props;
+        const {count} = this.state;
         return (
         <div className='blogItem'>
-            <button onClick={onClick}>click me!</button>
+            <button onClick={this.onCountClick}>click me!</button>
             <span>{count}</span>
 
             {blogPosts.map((post, index) => (
@@ -43,7 +43,7 @@ const BlogList = ({count, onClick}) => {
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam vitae earum soluta consequatur, nam nihil odit laborum natus et quae dolore vero eaque culpa pariatur. Quia dicta facere itaque laudantium vero atque rem sapiente at ut voluptas magnam esse eveniet laborum ducimus expedita error modi, incidunt labore quibusdam tempora consectetur.</p>
             </div>
         </div>
-        
+        *//*
         <div className='blogItem'>
             <button onClick={onClick}>click me!</button>
             <span>{count}</span>

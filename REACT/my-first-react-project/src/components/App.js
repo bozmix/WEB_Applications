@@ -1,6 +1,7 @@
 import { Fragment, Component } from 'react';
 import { Header } from './Header/Header.jsx';
 import { BlogList } from './BlogList/BlogList.jsx';
+import Star from './Star/Star.jsx';
 import './App.css';
 
 class App extends Component {
@@ -32,6 +33,7 @@ render() {
   return (
     <Fragment>
       <Header isLoggedIn={isLoggedIn} onLogIn={this.onLogIn} onLogOut={this.onLogOut} name={user} />
+      <Star/>
       <BlogList count={count} onClick={this.onCountClick}/>
     </Fragment>
   );

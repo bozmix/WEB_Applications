@@ -1,0 +1,16 @@
+.wrapper {
+    background-color: white;
+    border: black 1px solid;
+    color: black;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.selected {
+    background-color: black;
+    color: white;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
