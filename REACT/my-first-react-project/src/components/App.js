@@ -12,6 +12,7 @@ class App extends Component {
       count: 0
     }
     this.onLogIn = this.onLogIn.bind(this);
+    this.onCountClick = this.onCountClick.bind(this);
   }
 
   //onLogIn = () => this.setState({isLoggedIn: true});
@@ -19,14 +20,19 @@ class App extends Component {
     this.setState({isLoggedIn: true})
   }
 
+  onCountClick(){
+    this.setState({count: this.state.count + 1})
+  }
+
   onLogOut = () => this.setState({isLoggedIn: false});
 
 render() {
-  console.log(this.state);
+  //console.log(this.state);
+  const {user, isLoggedIn, count} = this.state;
   return (
     <Fragment>
-      <Header isLoggedIn={this.state.isLoggedIn} onLogIn={this.onLogIn} />
-      <BlogList />
+      <Header isLoggedIn={isLoggedIn} onLogIn={this.onLogIn} onLogOut={this.onLogOut} name={user} />
+      <BlogList count={count} onClick={this.onCountClick}/>
     </Fragment>
   );
 }
