@@ -6,3 +6,10 @@
     align-items: center;
     margin: 0 auto;
 }
+
+.usergrid {
+    border: 1px solid rgb(224, 216, 216);
+    width: 30%;
+    display: inline-block;
+    margin: 10px 1%;
+}

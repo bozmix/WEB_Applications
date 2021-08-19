@@ -5,13 +5,23 @@ import './Users.css';
 
 import { User } from '../User/User';
 
-export const Users = () => {
+
+const Users = ({GridView}) => {
+
     return (
+        !GridView ?
         <div className='users'>
             {
-                results.slice(0, 10).map((user, index) =>  <User user={user} key={index}/>)
+                results.map((user, index) =>  <User user={user} key={index} GridView={GridView}/>)
             }
-           
+        </div>
+        :
+        <div className='usersgrid'>
+            {
+                results.map((user, index) =>  <User user={user} key={index} GridView={GridView}/>)
+            }
         </div>
     )
 }
+
+export {Users}

@@ -5,3 +5,22 @@
 .userdata {
     margin: 10px 0;
 }
+
+.userdatagrid p {
+    margin: 5px 0;
+}
+
+.userdatagrid {
+    color: black;
+    text-align: left;
+    padding: 5px 15px;
+    position: relative;
+    bottom: 30px;
+}
+
+.userdatagrid .name {
+    position: relative;
+    bottom: 30px;
+    color: white;
+    font-size: larger;
+}
