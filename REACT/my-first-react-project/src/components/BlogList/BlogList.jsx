@@ -1,9 +1,42 @@
-import  React  from 'react';
+import  React, {useState, useEffect}  from 'react';
 //import { blogPosts } from '../../data/blog-posts.js';
 import { getBlogs } from '../../services/blogService.js';
 import {Blog} from '../Blog/Blog';
 import './BlogList.css';
 
+
+export const BlogList = () => {
+
+    const [blogPosts, setBlogPosts] = useState([]);
+    const [inputValue, setInputValue] = useState('');
+    const [filteredBlogs, setFilteredBlogs] = useState([]);
+
+    useEffect(() => {
+        getBlogs()
+            .then(blogs => {
+                setBlogPosts(blogs)
+                setFilteredBlogs(blogs)
+            })
+    }, [])
+
+    const onchange = (event) => {
+        setInputValue(event.target.value);
+        const fb = blogPosts.filter((blog) => { 
+            return blog.title.includes(inputValue)
+        })
+        setFilteredBlogs(fb);
+    }
+
+    return (
+        <div className='blogItem'>
+            <input type='text' value={inputValue} onChange={onchange} />
+            {filteredBlogs.map((post, index) => (
+                <Blog post={post} key={index} />
+            ))}
+        </div>
+    )
+}
+/*
 export class BlogList extends React.Component {
     constructor(props){
         super(props)

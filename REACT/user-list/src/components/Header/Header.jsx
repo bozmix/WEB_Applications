@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import { Headline } from '../Headline/Headline';
 
-const Header = ({buttonText, buttonClick}) => {
+const Header = ({buttonText, buttonClick, refresh}) => {
 
 
 
@@ -10,6 +10,7 @@ const Header = ({buttonText, buttonClick}) => {
         <div className='header'>
             <Headline/>
             <button onClick={buttonClick}>{buttonText}</button>
+            <button onClick={refresh}>Refresh Page</button>
         </div>
     )
 }
