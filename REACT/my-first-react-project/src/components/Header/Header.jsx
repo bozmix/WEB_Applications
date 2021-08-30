@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Header.css';
 
@@ -19,6 +20,16 @@ const Header = (props/*{isLoggedIn, onLogIn, onLogOut}*/) => {
             <h1>My React Blog</h1>
             <p>{name}</p>
             <button onClick={onClickCallBack}>{buttonText}</button>
+            <br></br>
+            <nav>
+                <Link to='/'>Home</Link>
+                <br></br>
+
+                <Link to='/about'>About</Link>
+                <br></br>
+
+                <Link to='/blog'>Blog</Link>
+            </nav>
         </header>
     )
 };

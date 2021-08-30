@@ -8,8 +8,10 @@ import { getUsers } from '../service/userService';
 
 
 function App() {
-  let [users, setUsers] = useState([])
+  let [filteredUsers, setFilteredUsers] = useState([]);
+  let [users, setUsers] = useState([]);
   let [GridView, setGridView] = useState(false);
+  let [searchValue, setSearchValue] = useState('');
   let buttonText = (GridView) ? 'Switch to list view' : 'Switch to grid view';
   let buttonClick = () => {
      setGridView(!GridView)
@@ -17,21 +19,33 @@ function App() {
 
   useEffect(()=>{
     getUsers()
-    .then(users => setUsers(users))
+    .then(users => {
+      setUsers(users);
+      setFilteredUsers(users)
+    })
   }, [])
+
 
   const refresh = () => {
     getUsers()
       .then(newUsers => {
-        setUsers(newUsers)
+        setFilteredUsers(newUsers)
       })
   }
+
+  const search = (event) => {
+    setSearchValue(event.target.value);
+    let fu = users.filter(user => (user.name.first).toLowerCase().includes(event.target.value));
+    //console.log(filteredUsers)
+    setFilteredUsers(fu);
+  }
+
   //console.log('from app.js users:', users)
 
   return (
     <Fragment>
-      <Header buttonText={buttonText} buttonClick={buttonClick} refresh={refresh}/>
-      <Users GridView={GridView} users={users}/>
+      <Header buttonText={buttonText} buttonClick={buttonClick} refresh={refresh} search={search} searchValue={searchValue}/>
+      <Users GridView={GridView} users={filteredUsers}/>
       <Footer/>
     </Fragment>
   );

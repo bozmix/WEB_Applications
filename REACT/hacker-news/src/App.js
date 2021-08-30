@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState, useEffect} from 'react';
+import {Header} from './components/Header/Header';
+import { Main } from './components/Main/Main';
+import { getStories } from '../src/Services/Services.js';
+let newsArray =[];
+
 
 function App() {
+  let [stories, setStories] = useState([]);
+
+  useEffect(() => {
+        getStories()
+          .then(myresponse => {
+            myresponse.forEach(id => {
+              fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
+                .then(response1 => response1.json())
+                .then(myresponse1 => newsArray.push(myresponse1))
+            })
+          })
+          setStories(newsArray);
+      }, []
+  )
+ //console.log('stories after useeffect',stories)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Header />
+      <Main stories={stories}/>
+    </React.Fragment>
   );
 }
 
